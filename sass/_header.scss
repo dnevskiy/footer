@@ -1,0 +1,73 @@
+$header: (
+	//header-type:one, //one/two/three/four
+	logo-position:left,
+	background-color:#000,
+
+	//dropdown-background-color:#000,
+	//dropdown-links-color:#000,
+
+	//header-position-absolute:
+	sticky-header:true,
+
+	header-top-bar-background-color:#fff, //false
+
+	social-icons-color:#fff,
+	social-icons-hover-color:#000,
+	icon-size:16px,
+	socials-position:right
+
+	//enable-search:true
+	//search-type:,
+	//style-typography-search:
+);
+
+// soon: background-image, menu bar (navigation menu, footer logo),
+@mixin header(
+	//header-type:one, //one/two/three/four
+	$logo-position:left,
+	$background-color:#000,
+
+	//$dropdown-background-color:#000,
+	//$dropdown-links-color:#000,
+
+	//$header-position-absolute:
+	$sticky-header:true,
+
+	$header-top-bar-background-color:#000,
+
+	$social-icons-color:#000,
+	$social-icons-hover-color:#000,
+	$icon-size:16px,
+	$socials-position:right
+
+	//$enable-search:true
+	//$search-type:,
+	//$style-typography-search:
+	) {
+  .header {
+    background-color: $background-color;
+    &_wrap-logo {
+    	float: $logo-position;
+    }
+		@if $sticky-header == true {
+			position: fixed;
+		}
+  }
+	@if $header-top-bar-background-color != false {
+		.top-bar {
+			background-color: $header-top-bar-background-color;
+		}	
+		@if $social-icons-color != false {
+			.top-bar-social a{
+				color: $social-icons-color;
+				font-size: $icon-size;
+				text-align: $socials-position;
+				&:hover {
+					color: $social-icons-hover-color;
+				}	
+			}	
+		}
+	}
+}
+
+@include header($header...);

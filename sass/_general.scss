@@ -1,0 +1,40 @@
+
+$general: (
+	website-width:1500px,
+	top-bottom-margin: 10px,
+	//container-background:#000,
+	website-background:#000,
+	logo-type: url(img/userfiles/logo.png),
+	content-density:compact, //compact/cozy/comfortable
+
+	//scroll-to-top:true,
+	icon:fw-arrow,
+	color:#fff
+);
+
+// soon: background-image, menu bar (navigation menu, footer logo),
+@mixin general(
+	$website-width:1500px,
+	$top-bottom-margin: false,
+	$container-background:#000,
+	$website-background:#000,
+	$logo-type: url(img/userfiles/logo.png),
+	$content-density: compact, // compact/cozy/comfortable
+
+	$scroll-to-top:true,
+	$icon: fa-top,
+	$color:#000
+	) {
+  body {
+    max-width: $website-width;
+		margin-left: auto;
+		margin-right: auto;
+		background: $website-background;
+		@if $top-bottom-margin != false {
+			margin-top: $top-bottom-margin;
+			margin-bottom: $top-bottom-margin;
+		}
+  }
+}
+
+@include general($general...);

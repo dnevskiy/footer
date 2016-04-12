@@ -1,0 +1,27 @@
+/* line 50, ../sass/footer.scss */
+.footer {
+  background-color: #fff;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  color: #fff;
+  float: left;
+}
+/* line 59, ../sass/footer.scss */
+.footer_widgets {
+  background-color: #fff;
+  color: #000;
+}
+/* line 62, ../sass/footer.scss */
+.footer_widgets_title {
+  color: #000;
+}
+/* line 66, ../sass/footer.scss */
+.footer_col {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}

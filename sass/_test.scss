@@ -1,0 +1,81 @@
+
+// Import Susy
+@import "../bower_components/susy/sass/susy";
+
+$susy: (
+  columns: 12,
+  gutters: .25,
+  gutter-position: inside,
+);
+
+$footer: (
+	footer-widgets:true,
+	number-of-columns:4,
+	widgets-background:#000,
+	widgets-titles-color:#000,
+	widgets-body-text-color:#000,
+
+	social:true,
+	social-icons-color:#fff,
+	social-icons-hover-color:#fff,
+	social-size: 16px,
+
+	background-color:#fff,
+	color:#fff,
+	spacing-top:40px,
+	spacing-bottom:30px,
+	position: left
+);
+
+// soon: background-image, menu bar (navigation menu, footer logo),
+@mixin footer(
+	$footer-widgets:true,
+	$number-of-columns:3,
+	$widgets-background:#000,
+	$widgets-titles-color:#000,
+	$widgets-body-text-color:#000,
+
+	$social:false,
+	$social-icons-color:$color,
+	$social-icons-hover-color:#fff,
+	$social-size: 16px,
+
+	$background-color:#000,
+	$color:$color,
+	$spacing-top:30px,
+	$spacing-bottom:40px,
+	$position:none
+	) {
+  .footer {
+    background-color: $background-color;
+    padding-top: $spacing-top;
+		padding-bottom: $spacing-bottom;
+		color: $color;
+		@if $position != none {
+			float: $position;
+		}
+		@if $footer-widgets == true {
+		  &_widgets {
+		  	background-color: $background-color;
+		  	color: $widgets-body-text-color;
+			  &_title {
+			  	color: $widgets-titles-color; 
+			  }			
+		  }	
+		  &_col {
+				@include span($number-of-columns);
+		  }	
+		}
+		@if $social == true {
+		  &_social {
+		  	color: $social-icons-color;
+		  	size: $social-size;
+		  	&:hover {
+		  		color: $social-icons-hover-color;
+		  	}
+		  }			
+		}
+  }
+}
+
+@include footer($footer...);
